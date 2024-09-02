@@ -42,7 +42,7 @@ aggregation = [
         
     },
     {
-        "$limit": 50000
+        "$limit": 20000
     }
 ]
 ;
