@@ -41,7 +41,7 @@ log.info(f"Last doc: {data[-1]}")
 
 # Extract the data
 x = [datetime.strptime(doc['time']['datetime'], "%Y-%m-%dT%H:%M:%S") for doc in data]
-y = np.array([doc['T1']["t"] for doc in data])
+y = np.array([doc['temp'] for doc in data])
 z = np.array([doc['S'] for doc in data])
 
 # Perform 3D linear regression to fit a plane

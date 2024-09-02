@@ -6,14 +6,14 @@ aggregation = [
     },
     {
         "$match": {
-            "S14": {
+            "S12": {
                 "$exists": true
             }
         },
         "$match": {
-            "S14.s": {
-                "$gte": 2e5,
-                "$lte": 5e5
+            "S12.s": {
+                "$gte": 6e5,
+                "$lte": 7e5
             },
             "T1.t": {
                 "$lte": 60
@@ -22,7 +22,7 @@ aggregation = [
     },
     {
         "$project": {
-            "S14": 1,
+            "S12": 1,
             "T1": 1,
             "time": 1
         }
@@ -42,7 +42,15 @@ aggregation = [
         
     },
     {
-        "$limit": 20000
+        "$match": {
+            "temp": {
+                "$gte": 25,
+                "$lte": 30
+            }
+        }
+    },
+    {
+        "$limit": 10000
     }
 ]
 ;
